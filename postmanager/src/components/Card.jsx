@@ -11,9 +11,14 @@ const categoryColor = (cat) => {
     return map[cat] || "bg-gray-100 text-gray-700";
 };
 
-const Card = ({ posts, setPosts }) => {
+const Card = ({ posts, setPosts, setPost, setModal }) => {
     const deletePost = (id) => {
         setPosts(posts.filter((post) => post.id != id))
+    }
+
+    const updatePost = (id) => {
+        setPost(posts.find((post) => post.id == id))
+        setModal("edit")
     }
     return (
         <>
@@ -39,7 +44,7 @@ const Card = ({ posts, setPosts }) => {
                                     <p className='text-stone-600 tracking-wide'>{post.body}</p>
 
                                     <div className='flex items-center gap-4 mt-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200' style={{ fontFamily: "system-ui, sans-serif" }}>
-                                        <button className='text-xs text-stone-500 hover:text-stone-900 transition-colors cursor-pointer'> ✏️ Edit</button>
+                                        <button onClick={() => updatePost(post.id)} className='text-xs text-stone-500 hover:text-stone-900 transition-colors cursor-pointer'> ✏️ Edit</button>
                                         <button onClick={() => deletePost(post.id)} className='text-xs text-red-400 hover:text-red-600 cursor-pointer'> ❌ <span className='text-red-500'>Delete</span></button>
                                     </div>
                                 </div>

@@ -5,7 +5,7 @@ const CATEGORIES = ["Philosophy", "Craft", "Design", "Technology", "Life", "Othe
 const Form = ({ setModal, modal, setPost, post, setPosts, posts }) => {
     let [errors, setErrors] = useState({})
     const handleForm = (e) => {
-        setPost({ ...post, id: uniqid(), date: Date.now(), [e.target.name]: e.target.value })
+        setPost({ ...post, [e.target.name]: e.target.value })
     }
 
     const validateFields = () => {
@@ -21,7 +21,15 @@ const Form = ({ setModal, modal, setPost, post, setPosts, posts }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!validateFields()) return;
-        setPosts([...posts, post])
+        
+        if (modal === "edit") {
+            // Update existing post
+            setPosts(posts.map((p) => p.id === post.id ? post : p))
+        } else {
+            // Create new post
+            setPosts([...posts, { ...post, id: uniqid(), date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) }])
+        }
+        
         setErrors({})
         setPost({
             id: "",

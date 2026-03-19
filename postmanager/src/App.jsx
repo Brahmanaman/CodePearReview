@@ -46,7 +46,7 @@ const App = () => {
         <Navbar setModal={setModal} />
         {modal && <Form setModal={setModal} modal={modal} setPost={setPost} post={post} setPosts={setPosts} posts={posts} />}
         <main className='max-w-350 px-6 py-10 mx-auto'>
-          <Card posts={posts} setPosts={setPosts} />
+          <Card posts={posts} setPosts={setPosts} setPost={setPost} post={post} setModal={setModal} />
         </main>
       </div>
     </>
