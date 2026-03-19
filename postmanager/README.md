@@ -1,16 +1,79 @@
-# React + Vite
+# PostManager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight React + Vite sample app to create, edit, delete, and list memory posts (commonplace book style).
 
-Currently, two official plugins are available:
+- Modern React + Vite setup
+- Local component state for posts (no backend yet)
+- Modal form for create/edit w/ validation
+- Category tags with color badges
+- Tailwind-style utility CSS classes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Add new post with title, category, and body
+- Edit existing post in modal dialog
+- Delete post with confirmation UI flow
+- Auto-dates entries on create
+- No-post placeholder message
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Components
 
-## Expanding the ESLint configuration
+- `App.jsx`: top-level state and modal handling
+- `Navbar.jsx`: header + New Post button
+- `Form.jsx`: create/edit modal form, field validation
+- `Card.jsx`: post list, category styling, edit/delete actions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+1. Clone repository
+
+   ```bash
+   git clone <your-repo-url>
+   cd postmanager
+   ```
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   ```
+
+3. Run development server
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open app
+
+   Visit `http://localhost:5173` (or URL shown in terminal)
+
+5. Build for production
+
+   ```bash
+   npm run build
+   ```
+
+6. Preview production build
+
+   ```bash
+   npm run serve
+   ```
+
+## Dependencies
+
+- `react`, `react-dom`
+- `vite`
+- `uniqid` (post ID generation)
+
+## Optional Improvements
+
+- Persist posts in `localStorage` or backend API
+- Add search + filter by category and date
+- Add pagination or infinite scroll
+- Improve accessibility and keyboard navigation
+
+## Author
+
+- Aman Sharma
+
