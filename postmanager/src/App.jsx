@@ -12,7 +12,7 @@ const App = () => {
     date: "",
     body: ""
   })
-  let [posts, setPosts] = useState(INITIAL_POSTS)
+  let [posts, setPosts] = useState([])
 
   return (
     <>
