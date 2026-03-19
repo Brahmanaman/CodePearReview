@@ -71,7 +71,7 @@ const Form = ({ setModal, modal, setPost, post, setPosts, posts }) => {
                         </div>
 
                         <div>
-                            <p className='uppercase font-semibold text-stone-400 text-sm tracking-wider mb-1'>Category</p>
+                            <p className='uppercase font-semibold text-stone-400 text-sm tracking-wider mb-1'>Body</p>
                             <textarea type="text" id="body" name="body" rows={5} placeholder='Write something worth keeping…' value={post.body} onChange={handleForm} className='border border-stone-200 w-full px-4 py-2.5 text-stone-900 text-sm placeholder-stone-300 focus:outline-none focus:ring-1 focus:ring-stone-900 transition resize-none' />
                             {errors.body && <p className="text-red-500 text-xs mt-1">{errors.body}</p>}
                         </div>
